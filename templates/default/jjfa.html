@@ -1,0 +1,65 @@
+{{include file="head.html"}}
+<div class="daohang">
+<a href="index.php">首页</a>&gt;
+<a href="index.php?action=jjfa&id=20">解决方案</a>&gt;
+{{foreach from=$type item=type name=type}}
+{{if $typeId == $type.id}}
+{{$type.classname}}
+{{/if}}
+{{/foreach}}
+</div>
+<hr />
+<div class="newleft">
+	<div class="newlink">
+		<a href="index.php?action=link"><img src="images/yx_26.jpg" alt="蝶讯电子" /></a>
+	</div>
+	<div class="newtypetitle">
+		<p><img src="images/yx_25.jpg" alt="蝶讯电子" />&nbsp;&nbsp;解决方案</p>
+	</div>
+	<div class="newtype">
+		{{foreach from=$type2 item=type2 name=type2}}
+		{{if $typeId==$type2.id}}
+        <p class="noselect"><img src="images/logo_{{$smarty.foreach.type2.index+1}}.png" alt="蝶讯电子" />&nbsp;&nbsp;{{$type2.classname}}</p>
+        {{else}}
+        <p><a href="index.php?action=jjfa&id={{$type2.id}}"><img src="images/logo_{{$smarty.foreach.type2.index+1}}.png" alt="蝶讯电子" />&nbsp;&nbsp;{{$type2.classname}}</a></p>
+        {{/if}}
+        {{/foreach}}
+	</div>
+</div>
+<div class="newright">
+	<div class="title">
+    	<div class="left"></div>
+        <div class="mid">
+            <p>
+				{{foreach from=$type3 item=type3 name=type3}}
+				{{if $typeId == $type3.id}}
+				{{$type3.classname}}
+				{{/if}}
+				{{/foreach}}
+            </p>
+        </div>
+        <div class="right"></div>
+        <div class="cl"></div>    	
+    </div>
+	<div class="content_news" style="height:700px;">
+		<table border="0px" cellpadding="0" cellspacing="0" style="margin:0px auto; height:650px;">
+			<tr>
+				
+				<td class="news_content_tb1">&nbsp;</td>
+				<td class="news_content_tb2" valign="top">
+					{{if $jjfa!=""}}
+					{{foreach from=$jjfa item=jjfa name=jjfa}}
+					<p>{{$smarty.foreach.jjfa.index+1}}、<a href="index.php?action=jjfacontent&id={{$typeId}}&nid={{$jjfa.nid}}">{{$jjfa.title}}</a></p>
+                    {{/foreach}}
+                    {{else}}
+                    <p>暂无信息</p>
+                    {{/if}}
+				</td>
+			</tr>
+		</table>
+		<div class="showpropage"><p>{{$paggingbar}}</p></div>
+	</div>
+</div>
+<div class="cl"></div>
+<div class="cl"></div>
+{{include file="footer.html"}}

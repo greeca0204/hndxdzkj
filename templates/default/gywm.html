@@ -1,0 +1,44 @@
+{{include file="head.html"}}
+<div class="daohang">
+<a href="index.php">首页</a>&gt;
+<a href="index.php?action=gywm&nid=1">关于我们</a>&gt;
+{{foreach from=$type item=type name=type}}
+{{if $typeId==$type.nid}}
+{{$type.classname}}
+{{/if}}
+{{/foreach}}
+</div>
+<hr />
+<div class="newleft">
+	<div class="newlink">
+		<a href="index.php?action=link"><img src="images/yx_26.jpg" alt="蝶讯电子" /></a>
+	</div>
+	<div class="newtypetitle">
+		<p><img src="images/yx_25.jpg" alt="蝶讯电子" />&nbsp;&nbsp;关于我们</p>
+	</div>
+	<div class="newtype">
+		{{foreach from=$type2 item=type2 name=type2}}
+		{{if $typeId==$type2.nid}}
+        <p class="noselect"><img src="images/logo_{{$smarty.foreach.type2.index+1}}.png" alt="蝶讯电子" />&nbsp;&nbsp;{{$type2.classname}}</p>
+        {{else}}
+        <p><a href="index.php?action=gywm&nid={{$type2.nid}}"><img src="images/logo_{{$smarty.foreach.type2.index+1}}.png" alt="蝶讯电子" />&nbsp;&nbsp;{{$type2.classname}}</a></p>
+        {{/if}}
+		{{/foreach}}
+	</div>
+</div>
+<div class="newright">
+	<div class="title">
+    	<div class="left"></div>
+        <div class="mid">
+            <p>{{$gywm.title}}</p>
+        </div>
+        <div class="right"></div>
+        <div class="cl"></div>    	
+    </div>
+	<div class="content_gywm">
+		{{$gywm.content}}
+	</div>
+</div>
+
+<div class="cl"></div>
+{{include file="footer.html"}}

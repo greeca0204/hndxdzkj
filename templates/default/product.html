@@ -1,0 +1,45 @@
+{{include file="head.html"}}
+<div class="daohang">
+<a href="index.php">首页</a>&gt;
+<a href="index.php?action=showProList&proType=1">产品展示</a>&gt;
+{{if $product.proType==1}}<a href="index.php?action=showProList&proType=1">软件产品</a>
+{{elseif $product.proType==2}}<a href="index.php?action=showProList&proType=2">硬件产品</a>
+{{/if}}&gt;
+{{$product.proName}}
+</div>
+<hr />
+<div class="newleft" style="margin:0px 15px 0px 3px;">
+	<div class="newlink">
+		<a href="index.php?action=link"><img src="images/yx_26.jpg" alt="蝶讯电子" /></a>
+	</div>
+	<div class="newtypetitle">
+		<p><img src="images/yx_25.jpg" alt="蝶讯电子" />&nbsp;&nbsp;产品展示</p>
+	</div>
+	<div class="newtype">
+    	{{if $product.proType==1}}
+        <p class="noselect"><img src="images/yx_40.jpg" alt="蝶讯电子" />&nbsp;&nbsp;软件产品</p>
+        {{else}}
+        <p><a href="index.php?action=showProList&proType=1"><img src="images/yx_40.jpg" alt="蝶讯电子" />&nbsp;&nbsp;软件产品</a></p>
+        {{/if}}    	
+        {{if $product.proType==2}}
+        <p class="noselect"><img src="images/yx_41.jpg" alt="蝶讯电子" />&nbsp;&nbsp;硬件产品</p>
+        {{else}}
+        <p><a href="index.php?action=showProList&proType=2"><img src="images/yx_41.jpg" alt="蝶讯电子" />&nbsp;&nbsp;硬件产品</a></p>
+        {{/if}}        
+	</div>
+</div>
+<div class="newright">
+	<div class="title">
+    	<div class="left"></div>
+        <div class="mid">
+            <p style="text-align:center;padding:25px 0px 0px 0px;">{{$product.proName}}</p>
+        </div>
+        <div class="right"></div>
+        <div class="cl"></div>    	
+    </div>
+	<div class="content_cgal">
+		{{$product.proIntro}}
+	</div>
+</div>
+<div class="cl"></div>      
+{{include file="footer.html"}}

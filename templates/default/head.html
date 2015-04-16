@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="Keywords" content="{{$link.keyword}}" />
+<meta name="Description" content="{{$link.description}}" />
+<title>{{$siteTitle}}</title>
+<link rel="stylesheet" type="text/css" href="css/base.css"/>
+<link rel="stylesheet" href="kindeditor/themes/default/default.css" />
+<link rel="stylesheet" href="kindeditor/plugins/code/prettify.css" />
+<script type="text/javascript" src="js/jquery.js"></script>
+<script charset="utf-8" src="kindeditor/kindeditor.js"></script>
+<script charset="utf-8" src="kindeditor/lang/zh_CN.js"></script>
+<script charset="utf-8" src="kindeditor/plugins/code/prettify.js"></script>
+<script type="text/javascript" src="js/slider.js"></script>
+<script charset="utf-8" src="js/editor.js"></script>
+<script charset="utf-8" src="js/hidediv.js"></script>
+<script charset="utf-8" src="js/checkform.js"></script>
+<script charset="utf-8" src="js/nav.js"></script>
+
+</head>
+
+<body>
+	<div id="warp">
+    	<div class="banner"></div>
+        <div id="nav">			
+        	<ul>
+            	<li class="title"><img src="images/yx_02.jpg" alt="蝶讯电子" /></li>
+        		<li><a href="index.php"><img src="images/nav1.jpg" alt="蝶讯电子" /></a></li>
+        		<li>
+                	<a href="#"><img src="images/nav2.jpg" alt="蝶讯电子" /></a>
+                    <ul>
+                        {{foreach from=$cgywm item=cgywm name=cgywm}}
+                        <li><a href="index.php?action=gywm&nid={{$cgywm.nid}}">{{$cgywm.classname}}</a></li>
+                        {{/foreach}}
+                        <li><a href="index.php?action=link">联系我们</a></li>
+                    </ul>
+                </li>
+        		<li>
+                	<a href="#"><img src="images/nav3.jpg" alt="蝶讯电子" /></a>
+                    <ul>
+                        {{foreach from=$cnews item=cnews name=cnews}}
+                        <li><a href="index.php?action=news&id={{$cnews.id}}">{{$cnews.classname}}</a></li>
+                        {{/foreach}}
+                    </ul>
+                </li>
+        		<li>
+                	<a href="#"><img src="images/nav4.jpg" alt="蝶讯电子" /></a>
+                    <ul>
+                        {{foreach from=$cjjfa item=cjjfa name=cjjfa}}
+                        <li><a href="index.php?action=jjfa&id={{$cjjfa.id}}">{{$cjjfa.classname}}</a></li>
+                        {{/foreach}}
+                    </ul>
+                </li>
+        		<li>
+                	<a href="#"><img src="images/nav5.jpg" alt="蝶讯电子" /></a>
+                     <ul>
+                    	<li><a href="index.php?action=showProList&proType=1">软件产品</a></li>
+                        <li><a href="index.php?action=showProList&proType=2">硬件产品</a></li>
+                    </ul>
+                </li>
+        		<li>
+                	<a href="#"><img src="images/nav6.jpg" alt="蝶讯电子" /></a>
+                    <ul>
+                        {{foreach from=$ccgal item=ccgal name=ccgal}}
+                        <li><a href="index.php?action=cgal&nid={{$ccgal.nid}}">{{$ccgal.classname}}</a></li>
+                        {{/foreach}}                       
+                    </ul>
+                </li>
+        		<li><a href="index.php?action=cpyc"><img src="images/nav7.jpg" alt="蝶讯电子" /></a></li>
+        	</ul>
+            <div class="cl"></div>
+        </div>        
+        <div class="line"></div>

@@ -1,0 +1,23 @@
+{{include file="head.html"}}
+<div class="daohang"><a href="index.php">首页</a>&gt;<a href="index.php?action=gywm&nid=1">关于我们</a>&gt;<a href="index.php?action=link">联系我们</a>&gt;公司信息</div>
+<hr />
+<div class="linkus">
+	<div class="linkustitle">{{$link.comname}}</div>
+	<p style="font-size:33px; padding-top:12px; padding-bottom:30px; padding-left:33px; color:#040000;">公司信息</p>
+    <p>电子邮箱：{{$link.email}}</p>
+    <p>地址：{{$link.address}}</p>
+    <p>邮编：{{$link.postcode}}</p>
+    <p>传真：{{$link.fax}}</p>
+    <p>电话：{{$link.tel}}</p>
+    <p style="padding-left:125px; color:#040000;">{{$link.tel2}}</p>
+    <p style="padding-left:125px; color:#040000;">{{$link.tel3}}</p>
+    {{if $link.tel4!=""}}<p style="padding-left:125px; color:#040000;">{{$link.tel4}}</p>{{/if}}
+</div>
+<div class="linknav">
+	<div class="title">联系方式</div>
+	<div class="blueban"></div>
+	<div class="link"><a href="index.php?action=showMessage">直接留言</a></div>
+	<div class="link" style="background:#F90;">公司信息</div>
+</div>
+<div class="cl"></div>
+{{include file="footer.html"}}
